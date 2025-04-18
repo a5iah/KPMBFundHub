@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <title>Create Campaign</title>
+        <link rel="icon" type="image/png" href="/static/KPMBFundHubLogo.png">
+        <style type="text/css">
+            body
+            {
+                background-color: #006A71;
+                margin: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+            }
+            /**nav menu box style setting**/
+            .navmenu
+            {
+                display: flex;
+                background-color: #BDC72D;
+                justify-content: space-between;
+                align-items: center;
+                /**max-width: 1200px;**/
+                margin: auto;
+                padding: 0 20px;
+            }
+            /**logo style setting**/
+            .logo img
+            {
+                display: inline;
+                height: 70px;
+                width: auto;
+            }
+            /**nav menu list style setting**/
+            .navmenu ul li
+            {
+                display: inline-block;
+                position: relative;
+                list-style: none;
+            }
+            /**hyperlink button (in nav menu) style setting**/
+            .navmenu ul li a
+            {
+                font-weight: 500;
+                text-decoration: none;
+                padding: 20px 15px;
+                color: #006A71;
+                border-radius: 5px;
+                font-size: 18px;
+                transition-duration: 0.4s;
+            }
+            /**hyperlink button (in nav menu) when hover style setting**/
+            .navmenu ul li a:hover
+            {
+                transform: scale(1.2);
+                background-color: #006A71;
+                color: #FFFFDD;
+            }
+            /**hero section style setting**/
+            .hero
+            {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                margin-bottom: 20px;
+            }
+            /**hero image style setting**/
+            .hero img
+            {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            /* General container styling */
+            .container 
+            {
+                max-width: 800px; /* Set a max width */
+                margin: 20px auto; /* Center the container */
+                padding: 20px; /* Add some padding */
+                background-color: #FFFFDD; /* Light background for contrast */
+                border-radius: 8px; /* Rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            }
+
+            /* Title styling */
+            .container h1 
+            {
+                text-align: center; /* Center the title */
+                color: #006A71; /* Title color */
+                margin-bottom: 20px; /* Space below the title */
+            }
+
+            /* Input field styling */
+            .campaignForm input[type="text"],
+            .campaignForm textarea
+            {
+                padding: 10px; /* Add some padding */
+                margin-top: 5px;
+                margin-bottom: 10px; /* Space between fields */
+                border: 1px solid #006A71; /* Border style */
+                border-radius: 5px; /* Rounded corners */
+                font-size: 16px; /* Font size */
+                width: 100%;
+            }
+
+            .campaignForm textarea
+            {
+                width: 100%;
+                height: 150px;
+                margin-top: 5px;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 1px solid #006A71;
+                border-radius: 4px;
+                font-size: 16px;
+                resize: none;
+            }
+
+            /* Input field focus styling */
+            .campaignForm input[type="text"]:focus,
+            .campaignForm textarea:focus
+            {
+                border-color: #3498DB; /* Change border color on focus */
+                outline: none; /* Remove default outline */
+            }
+
+            .campaignForm .dates
+            {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                max-width: 700px;
+                margin-top: 5px;
+                margin-bottom: 50px;
+            }
+
+            .campaignForm .dates input[type=date]
+            {
+                width: 200px;
+            }
+
+            /* Button styling */
+            .campaignForm input[type="submit"] 
+            {
+                background-color: #006A71; /* Button color */
+                color: white; /* Button text color */
+                padding: 10px; /* Padding inside button */
+                border: none; /* Remove border */
+                border-radius: 5px; /* Rounded corners */
+                cursor: pointer; /* Pointer cursor on hover */
+                font-size: 16px; /* Font size */
+                font-weight: 600;
+            }
+
+            /* Button hover effect */
+            .campaignForm input[type="submit"]:hover 
+            {
+                background-color: #004f54; 
+            }
+
+            .campaignForm p 
+            {
+                text-align: center;
+                color: #666;
+                font-size: 14px; 
+            }
+
+            /**footer style setting**/
+            .footer
+            {
+                padding: 5px 60px;
+                background-color: #BDC72D;
+                text-align: center;
+            }
+            /**footer list style setting**/
+            .footer .footerList
+            {
+                display: flex;
+                justify-content: space-around;
+            }
+            /**social media list style setting**/
+            .footer .footerList li
+            {
+                list-style: none;
+            }
+            /**footer font style setting**/
+            .footer p
+            {
+                margin: 5px 0px;
+                color: #006A71;
+                font-weight: 500;
+            }
+            /**social media list style setting**/
+            .socmed li
+            {
+                display: inline-block;
+                padding: 2px 5px;
+                text-align: center;
+                list-style: none;
+            }
+            .socmed li a img
+            {
+                height: 20px;
+                width: auto;
+                transition: transform .2s;
+            }
+            .socmed li a img:hover
+            {
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+        <!--navigation menu box-->
+        <div class="navmenu">
+            <!--logo box-->
+            <div class="logo">
+                {% load static %}<img src="{% static "LogoKPM.png" %}">
+                <a href="{% url 'redirectHomePageOrg' %}">{% load static %}<img src="{% static "KPMBFundHubLogo.png" %}"></a>            
+            </div>
+            <!--navigation menu list-->
+            <nav>
+                <ul>
+                    <li> <a href="{% url 'LogOut' %}">Log Out</a> </li>
+                    <li> <a href="{% url 'DashboardCampaignOrg' %}">Dashboard</a></li>
+                    <li> <a href="{% url 'DonationCampaignO' %}">Campaigns</a></li>
+                    <li> <a href="{% url 'CampaignOrganizerO' %}">Organizers</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--container-->
+        <div class="container">
+            <!--sign up form-->
+            <div class="campaignForm">
+                <h1>Let's create a campaign!</h1>
+                <hr style="color: #006A71;">
+                <form action="CreateCampaignO" method="POST">
+                    {% csrf_token %}
+                    Campaign Name <br>
+                    <input type="text" name="campaignName" placeholder="Enter campaign name" required>
+                    <br><br>
+                    Campaign Description
+                    <textarea type="text" name="campaignDesc" placeholder="Enter campaign description" required></textarea>
+                    <br><br>
+                    Organizer ID
+                    <input type="text" name="orgID" value="{{ org.orgID }}" disabled>                    <br><br>
+                    Target Amount (RM)
+                    <input type="text" name="targetAmount_RM" placeholder="eg: 50" required>
+                    <br><br>
+                    <div class="dates">
+                        Start Date
+                        <br>
+                        <input type="date" name="startDate" required>
+                        End Date
+                        <br>
+                        <input type="date" name="endDate" required>
+                    </div>
+                    <p><input type="submit" value="Launch Campaign"></p>
+                </form>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="footer">
+            <ul class="footerList">
+                <li>
+                    <ul class="socmed">
+                        <li><a href="https://www.instagram.com/">{% load static %}<img src="{% static "instagram.png"%}"></a></li>
+                        <li><a href="https://twitter.com/?lang=en">{% load static %}<img src="{% static "X.png" %}"> </a></li>
+                        <li><a href="https://www.facebook.com/">{% load static %}<img src="{% static "facebook.png" %}"> </a></li>
+                    </ul>
+                </li>
+                <li><p>Contact Us<br>Phone: +60 12-3456-7890</p></li>
+                <li><p id="copyright">&copy; 2024 KPMB Fund Hub. All rights reserved.</p></li>
+            </ul>
+        </div>
+    </body>
+</html>

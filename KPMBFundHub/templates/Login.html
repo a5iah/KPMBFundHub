@@ -1,0 +1,353 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="icon" type="image/png" href="/static/KPMBFundHubLogo.png">
+        <style type="text/css">
+            body
+            {
+                margin: 0;
+                background-color: #006A71;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            /**nav menu box style setting**/
+            .navmenu
+            {
+                display: flex;
+                background-color: #BDC72D;
+                justify-content: space-between;
+                align-items: center;
+                /**max-width: 1200px;**/
+                margin: auto;
+                padding: 0 20px;
+            }
+            /**logo style setting**/
+            .logo img
+            {
+                display: inline;
+                height: 70px;
+                width: auto;
+            }
+            /**nav menu list style setting**/
+            .navmenu ul li
+            {
+                display: inline-block;
+                position: relative;
+                list-style: none;
+            }
+            /**hyperlink button (in nav menu) style setting**/
+            .navmenu ul li a
+            {
+                font-weight: 500;
+                text-decoration: none;
+                padding: 20px 15px;
+                color: #006A71;
+                border-radius: 5px;
+                font-size: 18px;
+                transition-duration: 0.4s;
+            }
+            /**hyperlink button (in nav menu) when hover style setting**/
+            .navmenu ul li a:hover
+            {
+                transform: scale(1.2);
+                background-color: #006A71;
+                color: #FFFFDD;
+            }
+            /**hero section style setting**/
+            .hero
+            {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                margin-bottom: 20px;
+            }
+            /**hero image style setting**/
+            .hero img
+            {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            /**tagline in hero section style setting**/
+            .tagline
+            {
+                position: absolute;
+                top: 25%; 
+                left: 50%; 
+                transform: translate(-50%, -50%); 
+                color: white;
+                font-size: 100px;
+                font-weight: bold;
+                text-shadow: 2px 2px grey;
+            }
+
+            /**form box style setting**/
+            .Loginform
+            {
+                max-width: 800px; 
+                margin: 20px auto; 
+                padding: 40px; 
+                background-color: #FFFFDD;
+                border-radius: 20px;
+                height: 500px;
+                width: 700px;
+                font-weight: 500;
+            }
+
+            /**form title h1 style setting**/
+            .Loginform h1
+            {
+                text-align: center;
+                color: #006A71;
+                font-weight: 500;
+            }
+
+            .Loginform hr
+            {
+                color: #006A71;
+            }
+
+            .loginType
+            {
+                background-color: white;
+                display: inline-block;
+                border-radius: 10px;
+                width: 243.5px;
+                height: auto;
+                border: 1px solid #006A71;
+            }
+
+            /* Hide default radio buttons (o) */
+            .loginType input[type="radio"] 
+            {
+                display: none;
+            }
+
+            /* Style the labels to act like toggle buttons */
+            .toggleLabel 
+            {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: white;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            /**first label (button kiri)**/
+            .toggleLabel:first-of-type 
+            {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-right: none;
+            }
+
+            /**last label (button kanan)**/
+            .toggleLabel:last-of-type 
+            {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-left: none;
+            }
+
+            /* Style for the label when it's selected (active) */
+            .loginType input[type="radio"]:checked + label 
+            {
+                background-color: #006A71;
+                color: white;
+                border-color: #006A71;
+            }
+
+            /* Change hover style for toggle button */
+            .toggleLabel:hover 
+            {
+                background-color: #e1e1e1;
+            }
+
+            /**no space between button**/
+            .toggleLabel + input[type="radio"] + label {
+            margin-left: -4px; /* Remove any spacing */
+            }
+
+            /**input box style setting**/
+            input[type=text]
+            {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border-radius: 10px;
+                border: 1px solid #006A71;
+            }
+
+            /**input box style setting**/
+            input[type=password]
+            {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border-radius: 10px;
+                border: 1px solid #006A71;
+            }
+
+            /**Login button submit**/
+            input[type=submit]
+            {
+                font-weight: 500;
+                text-decoration: none;
+                padding: 12px;
+                background-color: #006A71;
+                color: #FFFFDD;
+                border-radius: 5px;
+                border: 1px solid #006A71;
+                font-size: 18px;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type=submit]:hover
+            {
+                background-color: #004f54;
+            }
+
+            input[type=submit]:focus
+            {
+                background-color: #004f54;
+            }
+
+            /**sign up link style setting**/
+            .signUpLink
+            {
+                text-decoration: none;
+                color: #006A71;
+            }
+
+            /**footer style setting**/
+            .footer
+            {
+                padding: 5px 60px;
+                background-color: #BDC72D;
+                text-align: center;
+            }
+            /**footer list style setting**/
+            .footer .footerList
+            {
+                display: flex;
+                justify-content: space-around;
+            }
+            /**social media list style setting**/
+            .footer .footerList li
+            {
+                list-style: none;
+                font-weight: 500;
+            }
+            /**footer font style setting**/
+            .footer p
+            {
+                margin: 5px 0px;
+                color: #006A71;
+                font-weight: 500;
+            }
+            /**social media list style setting**/
+            .socmed li
+            {
+                display: inline-block;
+                padding: 2px 5px;
+                text-align: center;
+            }
+            .socmed li a img
+            {
+                height: 20px;
+                width: auto;
+                transition: transform .2s;
+            }
+            .socmed li a img:hover
+            {
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+        <!--navigation menu box-->
+        <div class="navmenu">
+            <!--logo box-->
+            <div class="logo">
+                {% load static %}<img src="{% static "LogoKPM.png" %}">
+                <a href="{% url 'index' %}">{% load static %}<img src="{% static "KPMBFundHubLogo.png" %}"></a>
+            </div>
+            <!--navigation menu list-->
+            <nav>
+                <ul>
+                    <li> <a href="{% url 'Login' %}">Login</a></li>
+                    <li> <a href="{% url 'SignUp' %}">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--container-->
+        <div class="container">
+            <!--sign up form-->
+            <div class="LoginForm">
+                <h1>Login</h1>
+                <hr>
+                <div class="message" style="text-align: center; font-weight: normal; color: maroon;">
+                    {{ message }}
+                </div>
+                <br>
+                <form action="Login" method="POST">
+                    {% csrf_token %}
+                    <label>Login as</label>
+                    <br>
+                    <div class="loginType">
+                        <input type="radio" id="userButton" name="logintype" value="user" checked>
+                        <label for="userButton" class="toggleLabel">Normal User</label>
+                        <input type="radio" id="orgButton" name="logintype" value="org">
+                        <label for="orgButton" class="toggleLabel">Organizer</label>
+                    </div>
+                    <br><br>
+                    <label id="idLabelName" for="username">Username </label>
+                    <input id="username" type="text" name="username" placeholder="Enter username">
+                    <br><br>
+                    <label>Password </label>
+                    <input type="password" name="password" placeholder="Enter password">
+                    <br><br>
+                    <p style="text-align: center;"><input type="submit" value="Login"></p>
+                </form>
+                <p style="text-align: center;">Don't have an account yet? <a class="signUpLink" href="SignUp">Sign Up Here</a> </p>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="footer">
+            <ul class="footerList">
+                <li>
+                    <ul class="socmed">
+                        <li><a href="https://www.instagram.com/">{% load static %}<img src="{% static "instagram.png"%}"></a></li>
+                        <li><a href="https://twitter.com/?lang=en">{% load static %}<img src="{% static "X.png" %}"> </a></li>
+                        <li><a href="https://www.facebook.com/">{% load static %}<img src="{% static "facebook.png" %}"> </a></li>
+                    </ul>
+                </li>
+                <li><p>Contact Us<br>Phone: +60 12-3456-7890</p></li>
+                <li><p id="copyright">&copy; 2024 KPMB Fund Hub. All rights reserved.</p></li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        document.querySelectorAll('input[name="logintype"]').forEach(function(element) 
+        {
+            element.addEventListener('change', function() 
+            {
+                var selectedType = document.querySelector('input[name="logintype"]:checked').value;
+                var idLabelName = document.getElementById('idLabelName');
+
+                if (selectedType == 'user') 
+                {
+                    idLabelName.textContent = 'Username'
+                } 
+                else 
+                {
+                    idLabelName.textContent = 'Organizer Name'
+                }
+            })
+        })
+    </script>
+</html>

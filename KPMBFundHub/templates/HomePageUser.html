@@ -1,0 +1,358 @@
+<html></html>
+    <head>
+        <title>KPMB Fund Hub Home Page</title>
+        <link rel="icon" type="image/png" href="/static/KPMBFundHubLogo.png">
+        <style type="text/css">
+            /**body style setting**/
+            body
+            {
+                background-color: #FFFFDD;
+                margin: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            /**nav menu box style setting**/
+            .navmenu
+            {
+                display: flex;
+                background-color: #BDC72D;
+                justify-content: space-between;
+                align-items: center;
+                /**max-width: 1200px;**/
+                margin: auto;
+                padding: 0 20px;
+            }
+            /**logo style setting**/
+            .logo img
+            {
+                display: inline;
+                height: 70px;
+                width: auto;
+            }
+            /**nav menu list style setting**/
+            .navmenu ul li
+            {
+                display: inline-block;
+                position: relative;
+                list-style: none;
+            }
+            /**hyperlink button (in nav menu) style setting**/
+            .navmenu ul li a
+            {
+                font-weight: 500;
+                text-decoration: none;
+                padding: 20px 15px;
+                color: #006A71;
+                border-radius: 5px;
+                font-size: 18px;
+                transition-duration: 0.4s;
+            }
+            /**hyperlink button (in nav menu) when hover style setting**/
+            .navmenu ul li a:hover
+            {
+                transform: scale(1.2);
+                background-color: #006A71;
+                color: #FFFFDD;
+            }
+            /**hero section style setting**/
+            .hero
+            {
+                position: relative;
+                display: inline-block;
+            }
+            /**hero image style setting**/
+            .hero img
+            {
+                width: 100%;
+                height: 450px;
+            }
+            /**tagline in hero section style setting**/
+            .tagline
+            {
+                position: absolute;
+                top: 10%;
+                left: 5%;
+                color: #FFFFDD;
+                font-size: 45px;
+                font-weight: bold;
+                text-shadow: 2px 2px grey;
+            }
+            /**donate now button in hero section style setting**/
+            .donateNowButton
+            {
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                width: 200px;
+                height: 25px;
+                padding: 17px 60px;
+                color: #FFFFDD;
+                background-color: #BDC72D;
+                text-align: center;
+                text-decoration: none;
+                font-size: 20px;
+                border-radius: 10px;
+                transition-duration: 0.4s;
+            }
+            .donateNowButton:hover
+            {
+			background-color: darkolivegreen;
+			color: #FFFFDD;
+		    }
+            /**start a campaign button in hero section style setting**/
+            .startCampaignButton
+            {
+                position: absolute;
+                top: 68%;
+                left: 5%;
+                width: 200px;
+                height: 25px;
+                padding: 17px 60px;
+                color: #FFFFDD;
+                background-color: #006A71;
+                text-align: center;
+                text-decoration: none;
+                font-size: 20px;
+                border-radius: 10px;
+                transition-duration: 0.4s;
+            }
+            .startCampaignButton:hover
+            {
+			background-color: darkslategrey;
+			color: #FFFFDD;
+		    }
+            /**welcome section style setting**/
+            .welcomeSection
+            {
+                padding: 20px;
+                background-color: #006A71;
+                color: #FFFFDD;
+                text-align: center;
+                font-weight: bold;
+            }
+            /**welcome section paragraph style setting**/
+            .welcomeSection p
+            {
+                padding-bottom: 20px;
+                color: #FFFFDD;
+                text-align: center;
+                font-weight: normal;
+                font-size: 25px;
+            }
+            /**campaign section style setting**/
+            .campaignSection
+            {
+                padding: 20px 200px;
+                text-align: center;
+                background-color: #FFFFDD;
+                color: #006A71;
+                font-size: 30px;
+            }
+            /**campaign section section font p style setting**/
+            .campaignSection p
+            {
+                text-align: center;
+                font-size: 20px;
+                color: #006A71;
+            }
+            /**campaign container container style setting**/
+            .campaignContainer
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            /**campaign box  box style setting**/
+            .campaignBox
+            {
+                width: 80%;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin: 0 30px 25px 30px;
+                border-radius: 10px;
+            }
+
+            /**campaign text box style setting**/
+            .campaigntext
+            {
+                text-align: center;
+                padding: 10px 20px;
+            }
+
+            /**campaign image style setting**/
+            .campaignBox img
+            {
+                width: 100%;
+                height: 200px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            /**see more button style setting**/
+            .seeMoreButton
+            {
+                width: 100px;
+                height: 20px;
+                padding: 15px 60px;
+                color: #FFFFDD;
+                background-color: #006A71;
+                text-align: center;
+                text-decoration: none;
+                font-size: 18px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                transition: background-color 0.3s ease;
+            }
+            .seeMoreButton:hover{
+                background-color: #FFFFDD;
+                color: #006A71;
+                border: 2px solid #006A71;
+            }
+            /**about us section style setting**/
+            .aboutusSection
+            {
+                display: flex;
+                padding: 20px 200px;
+                margin-top: 20px;
+                background-color: #006A71;
+            }
+            .aboutusSection .aboutUsText
+            {
+                padding: 10px 30px 10px 10px;
+                color: #FFFFDD;
+            }
+            .aboutusSection .aboutUsImg
+            {
+                padding: 10px 40px;
+            }
+            /**about us image style setting**/
+            .aboutUsImg img
+            {
+                height: 300px;
+                width: auto;
+                border-radius: 10px;
+            }
+            /**footer style setting**/
+            .footer
+            {
+                padding: 5px 60px;
+                background-color: #BDC72D;
+                text-align: center;
+            }
+            /**footer list style setting**/
+            .footer .footerList
+            {
+                display: flex;
+                justify-content: space-around;
+            }
+            /**social media list style setting**/
+            .footer .footerList li
+            {
+                list-style: none;
+                font-weight: 500;
+            }
+            /**footer font style setting**/
+            .footer p
+            {
+                margin: 5px 0px;
+                color: #006A71;
+                font-weight: 500;
+            }
+            /**social media list style setting**/
+            .socmed li
+            {
+                display: inline-block;
+                padding: 2px 5px;
+                text-align: center;
+            }
+            .socmed li a img
+            {
+                height: 20px;
+                width: auto;
+                transition: transform .2s;
+            }
+            .socmed li a img:hover
+            {
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+        <!--navigation menu box-->
+        <div class="navmenu">
+            <!--logo box-->
+            <div class="logo">
+                {% load static %}<img src="{% static "LogoKPM.png" %}">
+                <a href="{% url 'redirectHomePageUser' %}">{% load static %}<img src="{% static "KPMBFundHubLogo.png" %}"></a>
+            </div>
+            <!--navigation menu list-->
+            <nav>
+                <ul>
+                    <li> <a href="{% url 'LogOut' %}">Log Out</a> </li>
+                    <li> <a href="{% url 'DashboardDonationUser' %}">Dashboard</a></li> 
+                    <li> <a href="{% url 'DonationCampaignU' %}">Campaigns</a></li>
+                    <li> <a href="{% url 'CampaignOrganizerU' %}">Organizers</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--hero section-->
+        <div class="hero">
+            {% load static %}<img src="{% static "welcomeHeader.jpg" %}">
+            <p class="tagline">small acts, <br>BIG IMPACT</p>
+            <a class="donateNowButton" href="{% url 'DonationCampaignU' %}">Donate Now</a>
+        </div>
+        <!--Big container-->
+        <div class="container">
+            <!--welcome to website & website description box-->
+            <div class="welcomeSection">
+                <h1>Welcome {{ userFirstName }}, </h1>
+                <p>Take a look around and see what good deeds you can do today.</p>
+            </div>
+            <!--campaign section-->
+            <div class="campaignSection">
+                <h2>CAMPAIGNS</h2>
+                <div class="campaignContainer">
+                    <div class="campaignBox">{% load static %}<img src="{% static "road-accident.jpg" %}">
+                        <div class="campaigntext"><p>Support Injured Students</p></div>
+                    </div>
+                    <div class="campaignBox">{% load static %}<img src="{% static "surauKPMB.jpg" %}">
+                        <div class="campaigntext"><p>Upgrade College Mosque</p></div>
+                    </div>
+                    <div class="campaignBox">{% load static %}<img src="{% static "sukarelawan.jpeg" %}">
+                        <div class="campaigntext"><p>Volunteer Program for Orphanage</p></div>
+                    </div>
+                </div>
+                <br>
+                <a class="seeMoreButton" href="{% url 'DonationCampaignU' %}">See More</a>
+                <br>
+            </div>
+            <!--AboutUs section-->
+            <div class="aboutusSection">
+                <div class="aboutUsText">
+                    <h2>About Us</h2>
+                    <p>KPMBFundHub was born out of the desire to make a difference within the KPMB community. 
+                        Established by a group of dedicated students and staff this platform serves as a hub where generosity meets opportunity. 
+                        Whether it's improving campus facilities, helping fellow students in need, or supporting our faculty and staff, 
+                        KPMBFundHub is here to rally the community and foster positive change. Since our inception, we've witnessed the power of 
+                        collective action, proving that together, we can achieve remarkable things.</p>
+                        <br>
+                </div>
+                <div class="aboutUsImg">
+                    {% load static %}<img src="{% static "aboutUs.jpg" %}">
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="footer">
+            <ul class="footerList">
+                <li>
+                    <ul class="socmed">
+                        <li><a href="https://www.instagram.com/">{% load static %}<img src="{% static "instagram.png"%}"></a></li>
+                        <li><a href="https://twitter.com/?lang=en">{% load static %}<img src="{% static "X.png" %}"> </a></li>
+                        <li><a href="https://www.facebook.com/">{% load static %}<img src="{% static "facebook.png" %}"> </a></li>
+                    </ul>
+                </li>
+                <li><p>Contact Us<br>Phone: +60 12-3456-7890</p></li>
+                <li><p id="copyright">&copy; 2024 KPMB Fund Hub. All rights reserved.</p></li>
+            </ul>
+        </div>
+    </body>
+</html>
